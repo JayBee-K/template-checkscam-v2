@@ -820,7 +820,7 @@
 }
 
 .section-intro form {
-    padding-right: 45px;
+    padding: 100px 45px 100px 0;
 }
 
 .section-intro form .form-group .form-control {
@@ -872,8 +872,10 @@
     margin-left: 10px;
 }
 
-.section-intro .intro-image img {
-    max-width: 70%;
+.section-intro .form-bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .scam-list .scam-item {
@@ -963,9 +965,44 @@
     border-top: 0 !important;
 }
 
-.scam-list.scam-list_right .scam-item {
+.scam-list_right {
+    max-height: 442px;
+    overflow-y: auto;
+    border-radius: 8px;
+    border: 1px solid #dee2e6 !important;
+}
+
+.scam-list_right::-webkit-scrollbar {
+    width: 5px;
+}
+
+.scam-list_right::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-left: 1px solid #dee2e6;
+}
+
+.scam-list_right::-webkit-scrollbar-thumb {
+    background: #acacac;
+    transition: var(--transition);
+}
+
+.scam-list_right::-webkit-scrollbar-thumb:hover {
+    background: #7b7b7b;
+}
+
+.scam-list_right .scam-list .scam-item {
     padding-top: 9px !important;
     padding-bottom: 9px !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+}
+
+.scam-list_right .scam-list .scam-item:first-child {
+    border-top: 0 !important;
+}
+
+.scam-list_right .scam-list .scam-item:last-child {
+    border-bottom: 0 !important;
 }
 
 .scam-heading.section-heading {
@@ -2327,11 +2364,6 @@
         display: none;
     }
 
-    .section-intro .intro-image {
-        margin-top: 30px;
-        padding-left: 0;
-    }
-
     .section-profile .profile-inner .profile-box .profile-box_content .profile-box_content__title {
         font-size: 1.2em;
     }
@@ -2389,7 +2421,7 @@
         justify-content: flex-start;
     }
 
-    .scam-list.scam-list_right .scam-item .scam-info {
+    .scam-list_right .scam-list .scam-item .scam-info {
         width: 100% !important;
         white-space: nowrap;
     }
@@ -2700,4 +2732,10 @@
 
 .card-price_table:hover .card-body .card-list .card-list_item svg path {
     fill: var(--white);
+}
+
+@media screen and (max-width: 767px) {
+    .scam-list_right {
+        max-height: 455px;
+    }
 }
